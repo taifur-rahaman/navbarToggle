@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&display=swap");
+
+:root {
+  --primary-blue: #6ec0ff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,11 +11,87 @@
 }
 
 body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  align-items: center;
-  overflow: hidden;
+  font-family: "Aldrich", sans-serif;
   background-color: #f9f9f9;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.fa-poo {
+  color: var(--primary-blue);
+}
+
+.navbar-header span {
+  color: #6ec0ff;
+}
+
+.navbar-toggle {
+  cursor: pointer;
+  text-align: end;
+}
+
+.navbar {
+  content: "";
+  flex: 1 1 auto;
+}
+
+.navbar:nth-child(3) {
+  flex-basis: 100%;
+}
+
+.fa-bars {
+  font-size: 1.5rem;
+}
+
+.navbar-links {
+  flex-direction: column;
+  display: none;
+}
+
+.navbar-links.active {
+  display: block;
+}
+
+.navbar-links li {
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+.navbar-links li a {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #333;
+}
+
+.navbar-links a:hover {
+  color: var(--primary-blue);
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .navbar-links a {
+    margin-right: 10px;
+  }
+  .navbar:nth-child(3) {
+    flex-basis: auto;
+  }
 }
